@@ -1,0 +1,136 @@
+/* pages/eula/eula.wxss */
+
+/* 页面容器 */
+.eula-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #0f0f1a;
+  color: #c8c8d0;
+}
+
+/* ========== 顶部标题 ========== */
+.eula-header {
+  padding: 40rpx 40rpx 20rpx;
+  background: linear-gradient(180deg, #1a1a2e 0%, #0f0f1a 100%);
+  flex-shrink: 0;
+  border-bottom: 1px solid #2a2a3e;
+}
+
+.eula-title {
+  display: block;
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 2rpx;
+}
+
+.eula-subtitle {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 26rpx;
+  color: #8888aa;
+  letter-spacing: 4rpx;
+}
+
+/* ========== 协议正文（滚动区域） ========== */
+.eula-content {
+  flex: 1;
+  height: 0;              /* 强制容器有固定高度边界 */
+  overflow: hidden;       /* 配合 scroll-view 使用 */
+  padding: 30rpx 40rpx 20rpx;
+  box-sizing: border-box;
+  padding-bottom: 40rpx;  /* 底部留白，更舒适 */
+}
+
+.eula-text {
+  font-size: 28rpx;
+  line-height: 1.8;
+  color: #c8c8d0;
+}
+
+.eula-section-title {
+  display: block;
+  margin: 30rpx 0 12rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #7a9cf5;
+  letter-spacing: 1rpx;
+}
+
+.eula-paragraph {
+  display: block;
+  margin-bottom: 12rpx;
+  text-align: justify;
+}
+
+.eula-paragraph.highlight {
+  padding: 12rpx 20rpx;
+  background: rgba(255, 200, 100, 0.08);
+  border-left: 4rpx solid #f5b342;
+  border-radius: 4rpx;
+  color: #f0d8b0;
+}
+
+.eula-footer-line {
+  margin-top: 40rpx;
+  text-align: center;
+  color: #666688;
+  font-size: 26rpx;
+  letter-spacing: 2rpx;
+}
+
+/* ========== 底部按钮栏（固定） ========== */
+.eula-footer {
+  display: flex;
+  gap: 20rpx;
+  padding: 24rpx 40rpx;
+  padding-bottom: calc(24rpx + env(safe-area-inset-bottom));
+  background: #0f0f1a;
+  border-top: 1px solid #2a2a3e;
+  flex-shrink: 0;
+}
+
+.eula-footer .btn-disagree,
+.eula-footer .btn-agree {
+  flex: 1;
+  height: 88rpx;
+  border-radius: 44rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* "不同意" 按钮（弱化） */
+.eula-footer .btn-disagree {
+  background: transparent;
+  color: #8888aa;
+  border: 2rpx solid #3a3a52;
+}
+
+.eula-footer .btn-disagree::after {
+  border: none;
+}
+
+.eula-footer .btn-disagree:active {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* "同意" 按钮（高亮） */
+.eula-footer .btn-agree {
+  background: linear-gradient(135deg, #4a7cf7, #6c5ce7);
+  color: #ffffff;
+  box-shadow: 0 8rpx 30rpx rgba(74, 124, 247, 0.3);
+}
+
+.eula-footer .btn-agree::after {
+  border: none;
+}
+
+.eula-footer .btn-agree:active {
+  opacity: 0.85;
+  transform: scale(0.98);
+}

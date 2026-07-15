@@ -11,6 +11,20 @@ Page({
     logging: false,              // 是否正在登录
   },
   onLoad(){
+
+    // 可以检查是否已经同意过协议，如果已同意则自动跳转
+    const app = getApp();
+
+    const agreedVersion = wx.getStorageSync('eulaAgreedVersion');
+    if (agreedVersion !== app.globalData.eulaVersion) {
+      // 未同意当前版本，直接跳转到登录页
+      wx.redirectTo({
+        url: '/pages/eula/eula'
+      });
+    }
+    // 否则展示 EULA 页面
+
+
     var token = wx.getStorageSync('userToken')
     if(token === null){
       return;

@@ -14,6 +14,7 @@ App({
     })
   },
   globalData: {
+    eulaVersion: '0.1.1',
     userInfo: null
   }
 })

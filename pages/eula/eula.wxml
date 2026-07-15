@@ -1,0 +1,67 @@
+<!-- pages/eula/eula.wxml -->
+<view class="eula-container">
+
+<!-- 顶部标题 -->
+<view class="eula-header">
+  <text class="eula-title">用户协议</text>
+  <text class="eula-subtitle">EndHelper终末助手</text>
+</view>
+
+<!-- 协议正文（可滚动） -->
+<scroll-view class="eula-content" scroll-y>
+  <view class="eula-text">
+
+    <text class="eula-section-title">一、总则</text>
+    <text class="eula-paragraph">
+      1.1 欢迎使用 EndHelper终末助手（以下简称"本工具"）。本工具由开发者（以下简称"我们"）独立开发，是一款为《明日方舟：终末地》玩家提供游戏数据便捷查看功能的辅助工具。
+    </text>
+    <text class="eula-paragraph">
+      1.2 请您在使用本工具前，仔细阅读并充分理解本协议的全部内容。一旦您开始使用本工具，即视为您已完全同意并接受本协议的全部条款。如果您不同意本协议的任何内容，请立即停止使用本工具。
+    </text>
+
+    <text class="eula-section-title">二、服务内容与性质</text>
+    <text class="eula-paragraph">
+      2.1 本工具提供以下服务：查看玩家游戏内基础信息（昵称、等级、UID等）；查看理智当前值、上限及恢复进度；查看每日/周常任务完成进度；其他官方游戏内公开可查看的数据展示。
+    </text>
+    <text class="eula-paragraph">
+      2.2 重要声明：本工具完全免费、非盈利，不收取任何费用。本工具与鹰角网络（Hypergryph）及其旗下游戏《明日方舟：终末地》无任何官方关联、授权或背书。本工具仅为数据展示看板，绝不涉及任何自动操作、模拟点击、修改数据、脚本挂机等可能影响游戏公平性的功能。
+    </text>
+
+    <text class="eula-section-title">三、用户账号与数据</text>
+    <text class="eula-paragraph">
+      3.1 账号授权：使用本工具时，您需要提供您的游戏账号登录凭证（Token）。该凭证仅用于向官方服务器请求数据并展示给您本人，该凭证储存在微信本地缓存中,不会被我们收集、存储或用于任何其他用途。
+    </text>
+    <text class="eula-paragraph highlight">
+      3.2 数据存储：您的登录凭证（Token）仅保存在您设备的本地缓存中（wx.setStorageSync），不会上传至任何第三方服务器。您可以通过退出登录或清除小程序缓存的方式随时删除该数据。
+    </text>
+
+    <text class="eula-section-title">四、免责声明（重要）</text>
+    <text class="eula-paragraph">
+      4.1 使用风险自担：本工具按"现状"和"现有"基础提供，不提供任何明示或暗示的担保。您使用本工具所产生的全部风险由您自行承担。
+    </text>
+    <text class="eula-paragraph">
+      4.2 账号封禁风险：您理解并确认，本工具属于未经游戏官方授权的第三方辅助工具，使用本工具可能导致您的游戏账号被官方封禁、限制或采取其他处罚措施。您自愿承担此风险，我们对此不承担任何责任。
+    </text>
+
+    <text class="eula-section-title">五、协议更新与终止</text>
+    <text class="eula-paragraph">
+      5.1 本协议可能会根据法律法规要求或运营需要不时更新，更新后的条款将通过本工具内公告或其他适当方式通知您。继续使用即视为接受更新。
+    </text>
+    <text class="eula-paragraph">
+      5.2 如您违反本协议任何条款，我们有权立即终止您使用本工具的权限，且不承担任何责任。
+    </text>
+
+    <text class="eula-paragraph eula-footer-line">
+      —— 感谢您的理解与支持，愿你在终末地中一切顺利。 ——
+    </text>
+
+  </view>
+</scroll-view>
+
+<!-- 底部操作栏 -->
+<view class="eula-footer">
+  <button class="btn-disagree" bindtap="onDisagree">不同意</button>
+  <button class="btn-agree" bindtap="onAgree">同意并继续</button>
+</view>
+
+</view>
