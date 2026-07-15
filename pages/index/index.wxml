@@ -1,0 +1,92 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <!-- 背景光效 -->
+  <view class="glow glow-1"></view>
+  <view class="glow glow-2"></view>
+
+  <!-- 主卡片 -->
+  <view class="card">
+
+    <!-- ========================================== -->
+    <!-- 区块1：用户基础信息 (昵称 + 等级 + UID)    -->
+    <!-- ========================================== -->
+    <view class="user-bar">
+      <view class="user-info">
+        <text class="nickname">{{nickname || '博士'}}</text>
+        <text class="level-tag">Lv.{{levelCur || '--'}}</text>
+        <text class="uid-tag">#{{uid || '----'}}</text>
+      </view>
+      <view class="refresh-btn" bindtap="onRefresh">
+        <text class="refresh-icon">⟳</text>
+      </view>
+    </view>
+
+    <!-- ========================================== -->
+    <!-- 区块2：双重等级 (玩家等级 + BP通行证等级)  -->
+    <!-- ========================================== -->
+    <view class="double-level">
+      <view class="level-item">
+        <text class="level-label">玩家等级</text>
+        <text class="level-num">{{levelCur}} / {{levelMax}}</text>
+      </view>
+      <view class="level-divider"></view>
+      <view class="level-item">
+        <text class="level-label">通行证等级</text>
+        <text class="level-num">{{bpLevelCur}} / {{bpLevelMax}}</text>
+      </view>
+    </view>
+
+    <!-- ========================================== -->
+    <!-- 区块3：理智卡片 (current/max + 进度条 + 回满时间) -->
+    <!-- ========================================== -->
+    <view class="ap-card">
+      <view class="ap-header">
+        <text class="ap-label">⚡ 理 智</text>
+        <text class="ap-role-id">Role ID: {{roleId || '--'}}</text>
+      </view>
+      <view class="ap-value-row">
+        <text class="ap-current">{{apCurrent || '--'}}</text>
+        <text class="ap-slash">/</text>
+        <text class="ap-max">{{apMax || '360'}}</text>
+      </view>
+      <!-- 进度条 -->
+      <view class="progress-track">
+        <view class="progress-fill" style="width: {{apPercent || 0 }};"></view>
+      </view>
+      <!-- 恢复状态 -->
+      <text class="ap-status">{{apStatus || '获取数据中...'}}</text>
+    </view>
+
+    <!-- ========================================== -->
+    <!-- 区块4：任务与系统信息 (每日/周常 + 间隔 + 方舟状态) -->
+    <!-- ========================================== -->
+    <view class="bottom-grid">
+      <!-- 左侧：每日任务 -->
+      <view class="task-block">
+        <text class="task-title">每日任务</text>
+        <view class="task-detail">
+          <text>活跃度: <text class="highlight">{{dailyActivity || '--'}}</text>/100</text>
+        </view>
+      </view>
+      <!-- 右侧：周常任务 -->
+      <view class="task-block">
+        <text class="task-title">周常任务</text>
+        <view class="task-detail">
+          <text>进度: <text class="highlight">{{weeklyCur || '--'}}</text> / {{weeklyMax || '10'}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- ========================================== -->
+    <!-- 区块5：系统元数据 (轮询间隔 + 方舟绑定状态 + biz_code) -->
+    <!-- ========================================== -->
+    <view class="meta-bar">
+      
+    </view>
+    <view class="logout-btn" bindtap="logout">
+        <text class="logout-icon">退出登录</text>
+      </view>
+  </view>
+
+  <text class="footer">数据来源：鹰角网络</text>
+</view>

@@ -1,0 +1,275 @@
+/* pages/index/index.wxss */
+
+/* 页面背景 - 渐变星空 */
+.container {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #0b0e1a 0%, #1a1f33 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40rpx 30rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 装饰光效 */
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80rpx);
+  opacity: 0.3;
+  pointer-events: none;
+}
+.glow-1 {
+  width: 400rpx;
+  height: 400rpx;
+  background: #6c5ce7;
+  top: -100rpx;
+  right: -100rpx;
+}
+.glow-2 {
+  width: 300rpx;
+  height: 300rpx;
+  background: #00b894;
+  bottom: -80rpx;
+  left: -80rpx;
+}
+
+/* 主卡片 - 玻璃质感 */
+.card {
+  width: 100%;
+  max-width: 640rpx;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(30rpx);
+  -webkit-backdrop-filter: blur(30rpx);
+  border-radius: 48rpx;
+  padding: 36rpx 32rpx 28rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20rpx 60rpx rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- 区块1：用户栏 ---- */
+.user-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24rpx;
+}
+.user-info {
+  display: flex;
+  align-items: baseline;
+  gap: 12rpx;
+  flex-wrap: wrap;
+}
+.nickname {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 2rpx;
+}
+.level-tag {
+  font-size: 22rpx;
+  color: #fdcb6e;
+  background: rgba(253, 203, 110, 0.2);
+  padding: 2rpx 14rpx;
+  border-radius: 20rpx;
+  border: 1rpx solid rgba(253, 203, 110, 0.3);
+}
+.uid-tag {
+  font-size: 18rpx;
+  color: #636e72;
+  background: rgba(0,0,0,0.3);
+  padding: 2rpx 12rpx;
+  border-radius: 12rpx;
+  font-family: monospace;
+}
+.refresh-btn {
+  width: 64rpx;
+  height: 64rpx;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1rpx solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+}
+.refresh-btn:active {
+  transform: rotate(180deg);
+  background: rgba(255, 255, 255, 0.15);
+}
+.refresh-icon {
+  font-size: 36rpx;
+  color: #b2bec3;
+  font-weight: 300;
+}
+
+.logout-btn {
+  width: 200rpx;
+  height: 64rpx;
+  background: rgba(189, 39, 39, 0.7);
+  border-radius: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1rpx solid rgba(255, 0, 0, 1);
+  transition: all 0.3s;
+}
+
+
+/* ---- 区块2：双等级 ---- */
+.double-level {
+  display: flex;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 20rpx;
+  padding: 16rpx 20rpx;
+  margin-bottom: 24rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.05);
+}
+.level-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.level-divider {
+  width: 1rpx;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 0 10rpx;
+}
+.level-label {
+  font-size: 20rpx;
+  color: #636e72;
+  margin-bottom: 4rpx;
+}
+.level-num {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #dfe6e9;
+}
+
+/* ---- 区块3：理智卡片 ---- */
+.ap-card {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 28rpx;
+  padding: 24rpx 28rpx 20rpx;
+  margin-bottom: 24rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.05);
+}
+.ap-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rpx;
+}
+.ap-label {
+  font-size: 22rpx;
+  color: #b2bec3;
+  letter-spacing: 4rpx;
+}
+.ap-role-id {
+  font-size: 18rpx;
+  color: #636e72;
+  font-family: monospace;
+}
+.ap-value-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8rpx;
+  margin-bottom: 14rpx;
+}
+.ap-current {
+  font-size: 72rpx;
+  font-weight: 700;
+  color: #fd79a8;
+  line-height: 1;
+}
+.ap-slash {
+  font-size: 32rpx;
+  color: #636e72;
+  margin: 0 4rpx;
+}
+.ap-max {
+  font-size: 38rpx;
+  font-weight: 600;
+  color: #74b9ff;
+}
+.progress-track {
+  width: 100%;
+  height: 8rpx;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4rpx;
+  overflow: hidden;
+  margin-bottom: 12rpx;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #fd79a8, #e17055);
+  border-radius: 4rpx;
+  transition: width 0.5s ease;
+}
+.ap-status {
+  font-size: 22rpx;
+  color: #b2bec3;
+}
+
+/* ---- 区块4：任务网格 ---- */
+.bottom-grid {
+  display: flex;
+  gap: 16rpx;
+  margin-bottom: 20rpx;
+}
+.task-block {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 20rpx;
+  padding: 16rpx 18rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.05);
+}
+.task-title {
+  font-size: 22rpx;
+  color: #636e72;
+  display: block;
+  margin-bottom: 6rpx;
+}
+.task-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 4rpx;
+  font-size: 24rpx;
+  color: #b2bec3;
+}
+.highlight {
+  color: #fdcb6e;
+  font-weight: 600;
+}
+
+/* ---- 区块5：系统元数据 ---- */
+.meta-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+  padding-top: 16rpx;
+  border-top: 1rpx solid rgba(255, 255, 255, 0.06);
+}
+.meta-tag {
+  font-size: 18rpx;
+  color: #636e72;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 4rpx 14rpx;
+  border-radius: 16rpx;
+  font-family: monospace;
+}
+
+/* ---- 底部 ---- */
+.footer {
+  margin-top: 32rpx;
+  font-size: 20rpx;
+  color: #2d3436;
+  letter-spacing: 2rpx;
+  position: relative;
+  z-index: 1;
+}
